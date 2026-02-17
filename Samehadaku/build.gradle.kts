@@ -25,3 +25,15 @@ cloudstream {
 
     iconUrl = "https://www.google.com/s2/favicons?domain=https://samehadaku.world&sz=%size%"
 }
+
+android {
+    // Namespace harus unik untuk samehadaku
+    namespace = "com.danx1020.samehadaku"
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile> {
+    compilerOptions {
+        // Ini kunci supaya tidak error Kotlin 2.3.0
+        freeCompilerArgs.add("-Xskip-metadata-version-check")
+    }
+}

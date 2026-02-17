@@ -26,3 +26,15 @@ cloudstream {
 
     iconUrl = "hhttps://tv7.idlix.asia/wp-content/uploads/2020/07/logov4.png"
 }
+
+android {
+    // Namespace harus unik untuk Idlix
+    namespace = "com.danx1020.idlix"
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile> {
+    compilerOptions {
+        // Ini kunci supaya tidak error Kotlin 2.3.0
+        freeCompilerArgs.add("-Xskip-metadata-version-check")
+    }
+}
